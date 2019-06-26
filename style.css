@@ -5,12 +5,15 @@ body {
     background-repeat: no-repeat;
     background-size: auto;
 }
+#main-nav {
+    background-color: transparent;
+}
 
-.Li-profile-badge {
+#linked-prof {
     color: white;
 }
 #header{
-   
+    color: white;
     background-position: center;
     text-align: center;
 }

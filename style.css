@@ -1,26 +1,8 @@
 
-body {
-    background-color: #0897ea;
-    background-image: linear-gradient(319deg, #0897ea 0%, #2ae3f5 100%);    
-    background-repeat: no-repeat;
-    background-size: auto;
-}
-#main-nav {
-    background-color: transparent;
-}
-
-#linked-prof {
-    color: white;
-}
-#header{
-    color: white;
-    background-position: center;
-    text-align: center;
-}
 
 #profile-image {
     max-width: 250px;
-    border: 4px red solid;
+    border: white 5px solid;
 }
 
 

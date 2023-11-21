@@ -13,44 +13,23 @@
       --background-color: #75F05A;
       --background-color-2: white;
     }
-    @media screen and (max-width: 1100px) {
-      .hide-small {
-        display: none;
-      }
-
-      body {
-        height: 100vh;
-      }
-
-      #hero-pose-illustration {
-        /* display: none; */
-        position: absolute;
-        height: 100%;
-        /* left: 20%; */
-        /* z-index: -1; */
-      }
-      #skill-machine-illustration {display: none; }
-      #code-machine-illustration {display: none; }
-      #yoga-illustration {display: none; }
-      #barista-illustration {display: none; }
-    }
 
     body {
       background: var(--background-color);
       display: flex;
       flex-direction: column;
-      margin-top: 20vh;
-      margin-bottom: 20vh;
+      overflow-x: hidden;
+      margin: 0;
+      height: 100vh;
     }
 
     .title-variant {
       color: var(--background-color-2);
       text-align: right;
-      padding-right: 3rem;
-      margin-top: 4rem;
-      width: 100%;
+      width: 90%;
+      margin-top: 5%;
       font-family: 'Koulen', sans-serif;
-      font-size: 96px;
+      font-size: min(9vw, 80px);
       font-style: normal;
       font-weight: 400;
       line-height: 0.5;
@@ -58,13 +37,14 @@
 
     .hero {
       display: flex;
-      flex-grow: 1;
+      /* flex-grow: 1; */
       z-index: 1;
 
       background: var(--background-color-2);
-      width: 110%;
-      height: 60vh;
-      max-height: 600px;
+      width: 100%;
+      height: fit-content;
+      padding-top: 14%;
+      padding-bottom: 14%;
       align-items: center;
       justify-content: center;
     }
@@ -72,7 +52,7 @@
 
     .title {
       font-family: 'Caesar Dressing', sans-serif;
-      font-size: 8rem;
+      font-size: min(9vw, 160px);
       font-style: normal;
       font-weight: 400;
       line-height: 0.8;
@@ -96,37 +76,38 @@
 
     #hero-pose-illustration {
       position: absolute;
-      height: 90%;
-      left: 65%;
-      bottom: 35%;
+      width: 18%;
+      left: 80%;
+      bottom: 70%;
     }
 
     #skill-machine-illustration {
       position: absolute;
-      height: 70%;
-      left: 0%;
-      bottom: 60%;
+      width: 65%;
+      left: -5%;
+      bottom: 100%;
     }
 
    #code-machine-illustration {
       position: absolute;
-      height: 70%;
+      width: 80%;
       left: -5%;
-      bottom: -30%;
+      bottom: -170%;
     }
 
     #barista-illustration {
       position: absolute;
-      height: 60%;
-      right: -5%;
-      bottom: -30%;
+      width: 20%;
+      left: 80%;
+      bottom: -160%;
     }
 
     #yoga-illustration {
+      display: none;
       position: absolute;
-      height: 60%;
-      right: 25%;
-      top: -50%;
+      width: 20%;
+      right: 28%;
+      top: -170%;
     }
 
     #illustration-container {
@@ -134,35 +115,80 @@
       position: relative;
       justify-content: center;
       align-items: center;
-      height: 100%;
-      width: 100%;
-      max-width: 1280px;
-      max-height: 500px;
+      /* margin-left: 15%;
+      margin-right: 15%; */
+      /* max-width: 1280px;
+      max-height: 600px; */
+    }
+
+    #down-arrow {
+      display: flex;
+      margin-top: 2rem;
+      z-index: 2;
+      background: white;
+      border-radius: 50%;
+      border: 2px solid black;
+      padding: 10px;
+    }
+
+    .view-port {
+      height: 100vh;
+      width: 100vw;
+      align-items: center;
+    }
+
+    .mb-1 {
+      margin-bottom: 1rem;
+    }
+
+    @media screen and (max-width: 732px) {
+      .hide-small {
+        display: none;
+      }
+
+      body {
+        height: 100vh;
+      }
+
+      #hero-pose-illustration {
+        /* display: none; */
+        position: absolute;
+        display: flex;
+        /* height: 50%; */
+        width: 50%;
+        left: 25%;
+        bottom: 0%;
+        /* left: 20%; */
+        /* z-index: -1; */
+      }
     }
   </style>
 
   <script> </script>
 </head>
 <body>
-  <div class="col align-center">
-    <div class="title-variant" style="max-width: 1200px;">I'm Luke</div>
+  <div class="col align-center view-port mb-1">
+    <div class="title-variant">I'm Luke</div>
     <header class="hero">
       <div id="illustration-container">
-        <img id="hero-pose-illustration" src="./assets/Heroillustration-02.svg" alt="Hero Illustration">
-        <img id="skill-machine-illustration" src="./assets/Heroillustration-03.svg" alt="Skill Machine Illustration">
-        <img id="code-machine-illustration" src="./assets/Heroillustration-05.svg" alt="Code Machine Illustration">
-        <img id="barista-illustration" src="./assets/Heroillustration-06.svg" alt="Barista Illustration">
-        <!-- <img id="yoga-illustration" src="./assets/Heroillustration-04.svg" alt="Yoga Illustration"> -->
+        <img id="hero-pose-illustration" src="./assets/Heroillustration-04.svg" alt="Hero Illustration">
+        <img class="hide-small" id="skill-machine-illustration" src="./assets/Heroillustration-01.svg" alt="Skill Machine Illustration">
+        <img class="hide-small" id="code-machine-illustration" src="./assets/Heroillustration-02.svg" alt="Code Machine Illustration">
+        <img class="hide-small" id="barista-illustration" src="./assets/Heroillustration-03.svg" alt="Barista Illustration">
+        <img class="hide-small" id="yoga-illustration" src="./assets/Heroillustration-05.svg" alt="Yoga Illustration">
         <div style="display: flex;" class="title">
           <div class="row">
             <div>Fullstack</div>
-            <div class="hide-small" style="padding-top: 5rem">Engineer</div>
+            <div class="hide-small" style="padding-top: 7%">Engineer</div>
           </div>
         </div>
       </div>
     </header>
-    <div style="display: flex; position: relative; top: -15px; z-index: 2; background: white;border-color: black; border-style: solid; border-radius: 50%; padding: 10px">
+    <button id="down-arrow">
      <img src="./assets/Down-Arrow.svg" alt="Down Arrow">
+    </button>
+    <div id="content">
+      <h1 style="display: none">More to come soon...</h1>
     </div>
   </div>
 </body>

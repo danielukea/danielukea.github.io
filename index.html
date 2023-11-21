@@ -1,35 +1,46 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <meta name="author" content="Luke Danielson">
+  <meta charset="utf-8">
   <title>Luke Danielson</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Saira:400,900">
   <link href="https://fonts.cdnfonts.com/css/koulen" rel="stylesheet">
   <link href="https://fonts.cdnfonts.com/css/caesar-dressing" rel="stylesheet">
 
-  <style type="text/css">
+  <style>
     :root {
       --background-color: #75F05A;
       --background-color-2: white;
     }
-    @media screen and (max-width: 1023px) {
+    @media screen and (max-width: 1100px) {
       .hide-small {
         display: none;
       }
+
+      body {
+        height: 100vh;
+      }
+
       #hero-pose-illustration {
-        left: 20%;
-        z-index: -1;
-        top: 100px;
+        /* display: none; */
         position: absolute;
+        height: 100%;
+        /* left: 20%; */
+        /* z-index: -1; */
       }
       #skill-machine-illustration {display: none; }
       #code-machine-illustration {display: none; }
+      #yoga-illustration {display: none; }
+      #barista-illustration {display: none; }
     }
 
     body {
       background: var(--background-color);
-      margin: 0;
       display: flex;
       flex-direction: column;
+      margin-top: 20vh;
+      margin-bottom: 20vh;
     }
 
     .title-variant {
@@ -53,6 +64,7 @@
       background: var(--background-color-2);
       width: 110%;
       height: 60vh;
+      max-height: 600px;
       align-items: center;
       justify-content: center;
     }
@@ -60,11 +72,12 @@
 
     .title {
       font-family: 'Caesar Dressing', sans-serif;
-      font-size: 128px;
+      font-size: 8rem;
       font-style: normal;
       font-weight: 400;
       line-height: 0.8;
       text-transform: uppercase;
+      z-index: 999;
     }
 
     .row {
@@ -83,63 +96,74 @@
 
     #hero-pose-illustration {
       position: absolute;
-      width: 400px;
-      right: -5%;
-      top: -9%;
+      height: 90%;
+      left: 65%;
+      bottom: 35%;
     }
 
     #skill-machine-illustration {
       position: absolute;
-      width: 700px;
-      left: -5%;
-      top: -20%;
+      height: 70%;
+      left: 0%;
+      bottom: 60%;
     }
 
    #code-machine-illustration {
       position: absolute;
-      width: 800px;
+      height: 70%;
       left: -5%;
-      bottom: -10%;
+      bottom: -30%;
     }
 
     #barista-illustration {
       position: absolute;
-      width: 400px;
+      height: 60%;
       right: -5%;
-      bottom: -10%;
+      bottom: -30%;
     }
 
     #yoga-illustration {
       position: absolute;
-      width: 300px;
-      right: 20%;
-      top: -25%;
+      height: 60%;
+      right: 25%;
+      top: -50%;
+    }
+
+    #illustration-container {
+      display: flex;
+      position: relative;
+      justify-content: center;
+      align-items: center;
+      height: 100%;
+      width: 100%;
+      max-width: 1280px;
+      max-height: 500px;
     }
   </style>
-  <script>
-  </script>
-  <meta name="author" content="Luke Danielson">
-  <meta charset="utf-8">
+
+  <script> </script>
 </head>
 <body>
   <div class="col align-center">
-  <div class="title-variant">I'm Luke</div>
-  <header class="hero">
-    <div class="wrapper" style="display: flex; align-items: center; height: 100%; width: fit-content; position: relative">
-      <image id="hero-pose-illustration" src="./assets/Heroillustration-02.svg"></image>
-      <image id="skill-machine-illustration" src="./assets/Heroillustration-03.svg"></image>
-      <image id="code-machine-illustration" src="./assets/Heroillustration-05.svg"></image>
-      <image id="barista-illustration" src="./assets/Heroillustration-06.svg"></image>
-      <image id="yoga-illustration" src="./assets/Heroillustration-04.svg"></image>
-      <div class="title">
-        <div class="row">
-          <div>Fullstack</div>
-          <div class="hide-small" style="padding-top: 5rem">Engineer</div>
+    <div class="title-variant" style="max-width: 1200px;">I'm Luke</div>
+    <header class="hero">
+      <div id="illustration-container">
+        <img id="hero-pose-illustration" src="./assets/Heroillustration-02.svg" alt="Hero Illustration">
+        <img id="skill-machine-illustration" src="./assets/Heroillustration-03.svg" alt="Skill Machine Illustration">
+        <img id="code-machine-illustration" src="./assets/Heroillustration-05.svg" alt="Code Machine Illustration">
+        <img id="barista-illustration" src="./assets/Heroillustration-06.svg" alt="Barista Illustration">
+        <!-- <img id="yoga-illustration" src="./assets/Heroillustration-04.svg" alt="Yoga Illustration"> -->
+        <div style="display: flex;" class="title">
+          <div class="row">
+            <div>Fullstack</div>
+            <div class="hide-small" style="padding-top: 5rem">Engineer</div>
+          </div>
         </div>
-      </span>
+      </div>
+    </header>
+    <div style="display: flex; position: relative; top: -15px; z-index: 2; background: white;border-color: black; border-style: solid; border-radius: 50%; padding: 10px">
+     <img src="./assets/Down-Arrow.svg" alt="Down Arrow">
     </div>
-  </header>
-   <image style="display: flex; position: relative; top: -15px" src="./assets/Down Arrow.svg"></image>
   </div>
 </body>
 </html>

@@ -1,9 +1,14 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="author" content="Luke Danielson">
   <meta charset="utf-8">
-  <title>Luke Danielson</title>
+  <meta name="description" content="Luke Danielson's personal website">
+  <meta name="keywords" content="Luke Danielson, Luke, Danielson, Software Engineer, Software, Engineer, Fullstack, Fullstack Engineer">
+  <title>Luke D.</title>
+
+  <link rel="icon" href="./assets/Iconface.png" type="image/png">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Saira:400,900">
   <link href="https://fonts.cdnfonts.com/css/koulen" rel="stylesheet">
   <link href="https://fonts.cdnfonts.com/css/caesar-dressing" rel="stylesheet">
@@ -25,14 +30,21 @@
 
     .title-variant {
       color: var(--background-color-2);
-      text-align: right;
-      width: 90%;
-      margin-top: 5%;
       font-family: 'Koulen', sans-serif;
-      font-size: min(9vw, 80px);
       font-style: normal;
       font-weight: 400;
       line-height: 0.5;
+    }
+
+    .big-title {
+      font-size: min(9vw, 160px);
+    }
+
+    #intro-name {
+      text-align: right;
+      width: 90%;
+      margin-top: 5%;
+      font-size: min(9vw, 80px);
     }
 
     .hero {
@@ -129,6 +141,26 @@
       padding: 10px;
     }
 
+    @keyframes down {
+      from {
+        transform: translateY(0);
+      }
+      to {
+        transform: translateY(10px);
+      }
+    }
+
+    #down-arrow:hover {
+      box-shadow: 0 0 10px 0 rgba(0,0,0,0.5);
+      animation-name: down;
+      animation-duration: 1s;
+      animation-timing-function: ease-in-out;
+    }
+
+    #down-arrow:active {
+      filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(100%) contrast(100%);
+    }
+
     .view-port {
       height: 100vh;
       width: 100vw;
@@ -170,6 +202,7 @@
       bottom: 80%;
       rotate: 45deg;
     }
+
     #redis-icon {
       position: absolute;
       width: 10%;
@@ -187,16 +220,13 @@
       }
 
       #hero-pose-illustration {
-        /* display: none; */
         position: absolute;
         display: flex;
-        /* height: 50%; */
         width: 10%;
         left: 45%;
         bottom: 100%;
-        /* left: 20%; */
-        /* z-index: -1; */
       }
+
       .hero {
         padding-top: 5%;
         padding-bottom: 5%;
@@ -233,13 +263,48 @@
          width: 10%;
        }
     }
+
+    .hidden {
+      display: none;
+    }
+
+    @keyframes continue-transition {
+      from {
+        opacity: 0;
+      }
+      to{
+        opacity: 1;
+      }
+    }
+
+    .has-continued {
+      display: block;
+      animation-name: continue-transition;
+      animation-duration: 2s;
+    }
+
+    #links {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      padding: 30px;
+      gap: 40px;
+    }
   </style>
 
-  <script> </script>
+  <script>
+    function continueTransition() {
+      let content = document.getElementById("content");
+      content.classList.add("has-continued");
+      let downArrow = document.getElementById("down-arrow");
+      downArrow.style.display = "none";
+    }
+  </script>
 </head>
 <body>
   <div class="col align-center view-port mb-1">
-    <div class="title-variant">I'm Luke</div>
+    <div id="intro-name" class="title-variant">I'm Luke</div>
     <header class="hero">
       <div id="illustration-container">
         <img id="hero-pose-illustration" src="./assets/Heroillustration-04.svg" alt="Hero Illustration">
@@ -263,11 +328,27 @@
         </div>
       </div>
     </header>
-    <button id="down-arrow">
-     <img src="./assets/Down-Arrow.svg" alt="Down Arrow">
+
+    <button id="down-arrow" onclick="continueTransition();">
+       <svg width="36" height="38" viewBox="0 0 36 38" fill="none" xmlns="http://www.w3.org/2000/svg">
+       <g id="Down Arrow">
+       <path class="invert" id="Vector-2" d="M16.7926 2C16.7926 12.7954 16.2643 23.5692 16.2643 34.3632" stroke="black" stroke-width="3" stroke-linecap="round"/>
+       <path class="invert" id="Vector-3" d="M15.2077 35.608C12.0569 33.3809 8.72214 30.7592 5.93296 28.2317C4.64384 27.0635 2.82821 25.7062 2 24.4053" stroke="black" stroke-width="3" stroke-linecap="round"/>
+       <path class="invert" id="Vector-4" d="M34.2267 23.1606C29.8 26.3211 24.3622 28.6882 19.7276 31.6663C18.2829 32.5946 16.3034 34.1404 14.6793 34.7781" stroke="black" stroke-width="3" stroke-linecap="round"/>
+       </g>
+       </svg>
     </button>
-    <div id="content">
-      <h1 style="display: none">More to come soon...</h1>
+
+    <div id="content" class="hidden">
+      <h1 class="title-variant big-title" style="margin-top: 20%;">More to come soon...</h1>
+      <div id="links" class="row">
+        <a href="https://www.linkedin.com/in/luke-aaron-danielson/">
+          <img src="./assets/linkedin-icon.png" alt="LinkedIn Icon">
+        </a>
+        <a href="">
+          <img src="./assets/github-icon.png" alt="Github Icon">
+        </a>
+      </div>
     </div>
   </div>
 </body>

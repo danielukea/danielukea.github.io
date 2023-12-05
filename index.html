@@ -91,6 +91,23 @@
       width: 18%;
       left: 80%;
       bottom: 70%;
+      background-image: url("./assets/ruby-hero-sprites.png");
+      background-size: 300% 100%;
+      background-repeat: no-repeat;
+      aspect-ratio: 0.783;
+    }
+
+    #hero-pose-illustration:hover {
+      animation: png-animation 0.25s steps(2);
+      animation-iteration-count: 1;
+      animation-fill-mode: forwards;
+      /* animation-fill-mode: forwards; */
+    }
+
+    @keyframes png-animation {
+      100% {
+        background-position: 100%;
+      }
     }
 
     #skill-machine-illustration {
@@ -307,7 +324,8 @@
     <div id="intro-name" class="title-variant">I'm Luke</div>
     <header class="hero">
       <div id="illustration-container">
-        <img id="hero-pose-illustration" src="./assets/Heroillustration-04.svg" alt="Hero Illustration">
+        <!-- <img id="hero-pose-illustration" src="./assets/Heroillustration-04.svg" alt="Hero Illustration"> -->
+        <div id="hero-pose-illustration"></div>
         <img class="hide-small" id="skill-machine-illustration" src="./assets/Heroillustration-01.svg" alt="Skill Machine Illustration">
         <img class="hide-small" id="code-machine-illustration" src="./assets/Heroillustration-02.svg" alt="Code Machine Illustration">
         <img class="hide-small" id="barista-illustration" src="./assets/Heroillustration-03.svg" alt="Barista Illustration">
